@@ -11,7 +11,7 @@ const std = @import("std");
 // thread 5900199 panic: integer overflow
 
 fn tail_call_fib(i: u128, c: u128, n: u128) u128 {
-    return if (i == 0) c else @call(.always_tail, tail_call_fib, .{i - 1, n, c + n});
+    return if (i == 0) c else @call(.always_tail, tail_call_fib, .{ i - 1, n, c + n });
 }
 
 pub fn fib(i: u128) u128 {
